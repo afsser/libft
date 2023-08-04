@@ -1,0 +1,11 @@
+Makefile
+
+libft.h
+
+ft_strlen.c
+
+ft_strlcpy.c
+
+ft_strlcat.c
+
+ft_strtrim.c
