@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felipenasser <felipenasser@student.42.f    +#+  +:+       +#+        */
+/*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:25:39 by felipenasse       #+#    #+#             */
-/*   Updated: 2023/07/29 14:31:48 by felipenasse      ###   ########.fr       */
+/*   Updated: 2023/08/04 13:19:53 by fcaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 static int	ft_intlen(long int ln)
 {
 	int	count;
+	int	sign;
 
+	sign = 1;
 	count = 0;
 	if (ln == 0)
 	{
@@ -24,36 +26,40 @@ static int	ft_intlen(long int ln)
 	if (ln < 0)
 	{
 		ln = -ln;
+		sign = -1;
 	}
 	while (ln != 0)
 	{
 		ln = ln / 10;
 		count++;
 	}
-	return (count);
+	return (count * sign);
 }
 
 static char	*alloc(long int ln, int len)
 {
 	char	*buffer;
 
+	if (len < 0)
+		len = -len;
 	if (ln < 0)
 	{
 		buffer = malloc(len + 2);
+		if (!buffer)
+			return (0);
 		buffer[0] = '-';
 		buffer[len + 1] = '\0';
 	}
 	else
 	{
 		buffer = malloc(len + 1);
+		if (!buffer)
+			return (0);
 		buffer[0] = '0';
 		buffer[len] = '\0';
 		len--;
 	}
-	if (!buffer)
-		return (NULL);
-	else
-		return (buffer + len);
+	return (buffer + len);
 }
 
 char	*ft_itoa(int n)
@@ -61,15 +67,14 @@ char	*ft_itoa(int n)
 	long int	ln;
 	char		*ptr;
 	int			len;
-	int			sign;
 
-	sign = 1;
 	ln = n;
 	len = ft_intlen(ln);
 	ptr = alloc(ln, len);
+	if (!ptr)
+		return (0);
 	if (ln < 0)
 	{
-		sign = -1;
 		ln = -ln;
 	}
 	while (ln > 9)
@@ -79,7 +84,7 @@ char	*ft_itoa(int n)
 		ptr--;
 	}
 	*ptr = ln + '0';
-	if (sign < 0)
+	if (len < 0)
 		ptr--;
 	return (ptr);
 }
