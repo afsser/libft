@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nasser <nasser@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:16:23 by fcaldas-          #+#    #+#             */
-/*   Updated: 2023/07/25 18:49:56 by fcaldas-         ###   ########.fr       */
+/*   Updated: 2023/08/05 20:53:50 by nasser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			if (i == l_len)
 				return (big);
 		}
-	count++;
-	big++;
+		count++;
+		big++;
 	}
 	return ((void *)0);
 }
