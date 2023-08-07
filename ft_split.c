@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nasser <nasser@student.42.fr>              +#+  +:+       +#+        */
+/*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 20:57:43 by nasser            #+#    #+#             */
-/*   Updated: 2023/08/07 01:13:52 by nasser           ###   ########.fr       */
+/*   Updated: 2023/08/07 16:43:54 by fcaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ int	count_words(const char *s, char c)
 			i++;
 		}
 		else if (*s == c)
-		{
 			trigger = 0;
-		}
 		s++;
 	}
 	return (i);
@@ -47,10 +45,11 @@ static char	*word_dup(const char *s, int start, int finish)
 		return (0);
 	}
 	i = 0;
-	while (i < finish - start)
+	while (start < finish)
 	{
-		word[i] = s[start + i];
+		word[i] = s[start];
 		i++;
+		start++;
 	}
 	word[i] = '\0';
 	return (word);
@@ -64,16 +63,16 @@ char	**ft_split(char const *s, char c)
 	int		start;
 
 	split = ft_calloc((count_words(s, c) + 1), sizeof(char *));
-	if (!s || !c || !split || !ft_strlen(s))
+	if (!s || !split)
 		return (0);
 	i = 0;
 	j = 0;
 	start = -1;
 	while (i <= ft_strlen(s))
 	{
-		if (s[i] != c && s[i] != '\0' && start < 0)
+		if (s[i] != c && start < 0)
 			start = i;
-		else if ((s[i] == c || s[i] == '\0' || i == ft_strlen(s)) && start >= 0)
+		else if ((s[i] == c || i == ft_strlen(s)) && start >= 0)
 		{
 			split[j] = word_dup(s, start, i);
 			start = -1;
