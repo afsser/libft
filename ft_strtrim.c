@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nasser <nasser@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 13:25:29 by fcaldas-          #+#    #+#             */
-/*   Updated: 2023/08/04 15:29:55 by fcaldas-         ###   ########.fr       */
+/*   Updated: 2023/08/05 21:10:32 by nasser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main(void)
 // {
-// 	char	s1[] = "   &  &mas que p&tifaria & ";
+// 	char	s1[] = "   &  &mas que p&tifaria ein& ";
 // 	char	set[] = " &";
 
 // 	printf("%s", ft_strtrim(s1, set));
