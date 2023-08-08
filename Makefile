@@ -14,7 +14,13 @@ ft_strmapi.c ft_split.c   ft_putchar_fd.c              \
 ft_putendl_fd.c           ft_putnbr_fd.c               \
 ft_putstr_fd.c  
 
+B_SRCS = \
+ft_lstnew_bonus.c
+
 OBJS = $(SRCS:%.c=%.o)
+
+B_OBJS = $(B_SRCS:%.c=%.o)
+
 HEADER = libft.h
 
 all: $(NAME)
@@ -23,12 +29,15 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $(SRCS) -I $(HEADER)
 	ar -rc $(NAME) $(OBJS)
 
+bonus : $(B_OBJS)
+	ar -rc $(NAME) $(B_OBJS)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(B_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
