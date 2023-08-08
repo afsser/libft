@@ -16,6 +16,7 @@ ft_putstr_fd.c
 
 B_SRCS = \
 ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
+ft_lstsize_bonus.c  \
 
 OBJS = $(SRCS:%.c=%.o)
 
