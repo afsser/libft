@@ -6,7 +6,7 @@
 /*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:11:58 by fcaldas-          #+#    #+#             */
-/*   Updated: 2023/07/27 16:17:58 by fcaldas-         ###   ########.fr       */
+/*   Updated: 2023/08/08 17:02:22 by fcaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i >= 0)
 	{
 		if (s[i] == (unsigned char)c)
-			return (s + i);
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (0);

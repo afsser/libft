@@ -30,12 +30,13 @@ HEADER = libft.h
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -c $(SRCS) -I $(HEADER)
-	ar -rc $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 
-bonus : $(B_OBJS)
-	ar -rc $(NAME) $(B_OBJS)
+bonus : $(B_OBJS) $(HEADER)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@ 
+	ar -rc $(NAME) $@
 
 clean:
 	rm -f $(OBJS) $(B_OBJS)
