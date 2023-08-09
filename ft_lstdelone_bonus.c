@@ -6,7 +6,7 @@
 /*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:14:48 by fcaldas-          #+#    #+#             */
-/*   Updated: 2023/08/08 18:49:32 by fcaldas-         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:55:50 by fcaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	{
 		if (del && lst->content)
 			(del)(lst->content);
-		(free)(lst);
+		free(lst);
 		lst = NULL;
 	}
 }
