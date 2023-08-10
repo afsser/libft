@@ -6,7 +6,7 @@
 /*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 20:57:43 by nasser            #+#    #+#             */
-/*   Updated: 2023/08/10 15:35:25 by fcaldas-         ###   ########.fr       */
+/*   Updated: 2023/08/10 20:20:02 by fcaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,24 +89,3 @@ char	**ft_split(char const *s, char c)
 	split[j] = 0;
 	return (split);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	const char	txt[] = " ola meus amigos tudo bem com voces o que anda ";
-// 	char	div = ' ';
-// 	char	**result;
-// 	int		i;
-
-// 	result = ft_split(txt, div);
-// 	i = 0;
-// 	while (result[i])
-// 	{
-// 		printf(" [%s] ", result[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-	// if (ft_strlen(s) == start)
-	// 	return (empty_string());

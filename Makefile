@@ -1,7 +1,5 @@
-# CC=gcc
-# CFLAGS = -Wall -Wextra -Werror
-
 NAME = libft.a
+
 SRC = \
 ft_isdigit ft_isalpha ft_isalnum ft_isascii		\
 ft_isprint ft_toupper ft_tolower ft_strlen		\
@@ -19,6 +17,9 @@ ft_lstnew	ft_lstadd_front 	ft_lstsize		\
 ft_lstlast	ft_lstadd_back		ft_lstdelone	\
 ft_lstclear	ft_lstiter			ft_lstmap		\
 
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS		= $(addsuffix .c, ${SRC})
 
