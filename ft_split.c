@@ -6,7 +6,7 @@
 /*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 20:57:43 by nasser            #+#    #+#             */
-/*   Updated: 2023/08/07 16:43:54 by fcaldas-         ###   ########.fr       */
+/*   Updated: 2023/08/10 15:35:25 by fcaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,21 @@ int	count_words(const char *s, char c)
 	return (i);
 }
 
-static char	*word_dup(const char *s, int start, int finish)
+static char	*word_dup(const char *s, int start, int finish, char **split)
 {
 	char	*word;
 	int		i;
 
+	i = 0;
 	word = ft_calloc(sizeof(char), (finish - start + 1));
 	if (!word)
 	{
-		free(word);
+		while (split)
+		{
+			free(split[i]);
+			i++;
+		}
+		free(split);
 		return (0);
 	}
 	i = 0;
@@ -74,7 +80,7 @@ char	**ft_split(char const *s, char c)
 			start = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && start >= 0)
 		{
-			split[j] = word_dup(s, start, i);
+			split[j] = word_dup(s, start, i, split);
 			start = -1;
 			j++;
 		}
