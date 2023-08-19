@@ -6,7 +6,7 @@
 /*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 20:25:31 by fcaldas-          #+#    #+#             */
-/*   Updated: 2023/08/10 20:27:41 by fcaldas-         ###   ########.fr       */
+/*   Updated: 2023/08/18 15:47:52 by fcaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*dest;
 
 	dest = (void *)(malloc(nmemb * size));
-	if (!dest)
+	if (!dest || (!nmemb && !size && ((nmemb * size) / size) != nmemb))
 		return (NULL);
 	ft_bzero(dest, nmemb * size);
 	return (dest);

@@ -6,7 +6,7 @@
 /*   By: fcaldas- <fcaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 14:49:11 by fcaldas-          #+#    #+#             */
-/*   Updated: 2023/07/25 15:02:46 by fcaldas-         ###   ########.fr       */
+/*   Updated: 2023/08/19 17:33:56 by fcaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s)
 {
-	int		len;
+	size_t	len;
 	char	*dup;
 	int		i;
 
